@@ -6,10 +6,7 @@ PROTO_IDENT    = "TXP:"
 PROTO_REPEAT   = 10       # Frame repeat count
 PROTO_PAUSE    = 5600
 PROTO_TUNE     = 350     # Time for Unit in us
-PROTO_BAUD     = 25      # Pairs (3,1) i.e OBEY THE SYNC!
 PROTO_SPEED    = 16
-PROTO_HEADER   = (PROTO_IDENT + '0', 0, PROTO_REPEAT, PROTO_PAUSE, PROTO_TUNE, PROTO_BAUD)
-PROTO_TAIL     = (1, 1, PROTO_SPEED, ';')
 PROTO_LOW      = 1
 PROTO_HIGH     = 3
 
