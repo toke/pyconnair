@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import socket
+import argparse
 
 PROTO_IDENT    = "TXP:"
 PROTO_REPEAT   = 10       # Frame repeat count
@@ -206,19 +207,18 @@ class Intertechno(object):
 
 if __name__ == '__main__':
 
-    schlafzimmer = Intertechno('J', 1)
-    box          = Intertechno('l', 8)
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('--ip', help='IP-Address', type=str, default='192.168.1.136')
 
-    p = ConAir(ip='192.168.1.136')
-    p.switch(box.off())
+    parser.add_argument('address', help='address like A 1', type=str, nargs=2)
+    parser.add_argument('command', help='command to execute', choices=['off', 'on'])
+    args = parser.parse_args()
+    
+    switch =  Intertechno(args.address[0], int(args.address[1]))
+    #schlafzimmer = Intertechno('J', 1)
+    #box          = Intertechno('l', 8)
+
+    p = ConAir(ip=args.ip)
+    p.switch(switch.command(args.command.upper()))
     p.send()
 
-
-"""
-* API - Address + operation + parameter i.e.: switch(L3, True)
-* Encoding (Tri-State, Binary, Integer) telegram = EncodeTristate('FF0FFFF00FF0S') # 12+1/2 = 25baud
-* Wireprotocol (timings+encapsulation) 
-* UDP IP
-
-http://www.fhemwiki.de/wiki/Intertechno_Code_Berechnung
-"""

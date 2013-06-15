@@ -8,4 +8,9 @@ Python API for communication via [ConAir](http://simple-solutions.de/shop/produc
 
 The current prototypical state allows to send Intertechno commands to the radio controlled plugs.
 
+Fixme
+-----
 
+Protocol layers are not correct.
+While the details are part of the wire protocol the actual values must be derivied from the Higher levels.
+Either by ratios, frequencies, timings or similar since the speed
