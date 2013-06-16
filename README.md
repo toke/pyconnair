@@ -13,4 +13,4 @@ Fixme
 
 Protocol layers are not correct.
 While the details are part of the wire protocol the actual values must be derivied from the Higher levels.
-Either by ratios, frequencies, timings or similar since the speed
+Either by ratios, frequencies, timings or similar since the speed may vary.
