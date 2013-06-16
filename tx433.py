@@ -136,7 +136,7 @@ class WireProtocolA(object):
         sock.sendto(str(self), (self.ip, self.port))
 
 
-class ConAir(WireProtocolA):
+class ConnAir(WireProtocolA):
 
     def __init__(self, proto=ProtoA, ip='192.168.1.136', port=49880):
         self.protocol  = proto
@@ -218,7 +218,7 @@ if __name__ == '__main__':
     #schlafzimmer = Intertechno('J', 1)
     #box          = Intertechno('l', 8)
 
-    p = ConAir(ip=args.ip)
+    p = ConnAir(ip=args.ip)
     p.switch(switch.command(args.command.upper()))
     p.send()
 
