@@ -1,8 +1,6 @@
 pyconnair
 ========
 
-Currently a working prototype.
-
 Python API for communication via [ConnAir](http://simple-solutions.de/shop/product_info.php?products_id=87)
 433MHz - Ethernet Gateway or compatible devices.
 
